@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Whatsappmate</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Auth Check -->
+    <script src="config.js"></script>
+    <script src="auth.js"></script>
+    <script>
+        // Protect Route
+        Auth.checkAuth();
+
+        // Display User Info
+        const user = Auth.user; // Auth.user is already loaded in auth.js
+        if (user) {
+            console.log("Session verified locally:", user.email);
+        } else {
+            window.location.href = 'login.html';
+        }
+    </script>
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>💬</text></svg>">
+</head>
+
+<body>
+    <div class="app-layout">
+
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <svg viewBox="0 0 36 36" fill="none" width="32" height="32">
+                    <circle cx="18" cy="18" r="18" fill="#25D366" />
+                    <path
+                        d="M25.5 18c0 4.14-3.36 7.5-7.5 7.5a7.44 7.44 0 01-3.6-.92L10.5 26l1.47-3.82A7.44 7.44 0 0110.5 18c0-4.14 3.36-7.5 7.5-7.5s7.5 3.36 7.5 7.5z"
+                        fill="#fff" />
+                </svg>
+                <div class="logo-text">Whatsapp<span>mate</span></div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <a href="dashboard.html" class="nav-item active">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="7" height="7" />
+                            <rect x="14" y="3" width="7" height="7" />
+                            <rect x="3" y="14" width="7" height="7" />
+                            <rect x="14" y="14" width="7" height="7" />
+                        </svg>
+                        Dashboard
+                    </a>
+                    <a href="#" class="nav-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                            <path d="M16 3.13a4 4 0 010 7.75" />
+                        </svg>
+                        Contacts
+                    </a>
+                    <a href="campaigns.html" class="nav-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                            <path d="M19.07 4.93a10 10 0 010 14.14" />
+                            <path d="M15.54 8.46a5 5 0 010 7.07" />
+                        </svg>
+                        Broadcast
+                    </a>
+                    <a href="automation.html" class="nav-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                        </svg>
+                        Automation
+                    </a>
+                    <a href="chat.html" class="nav-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                        </svg>
+                        Live Chat
+                        <span class="nav-badge">5</span>
+                    </a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Tools</div>
+                    <a href="#" class="nav-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                        </svg>
+                        Templates
+                    </a>
+                    <a href="#" class="nav-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="18" y1="20" x2="18" y2="10" />
+                            <line x1="12" y1="20" x2="12" y2="4" />
+                            <line x1="6" y1="20" x2="6" y2="14" />
+                        </svg>
+                        Analytics
+                    </a>
+                    <a href="#" class="nav-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z" />
+                        </svg>
+                        Settings
+                    </a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="sidebar-user">
+                    <div class="avatar">JD</div>
+                    <div class="user-info">
+                        <h5>John Doe</h5>
+                        <p>Admin</p>
+                    </div>
+                </div>
+                <div id="userMenu" class="user-menu">
+                    <a href="settings.html">Profile & Settings</a>
+                    <a href="index.html" class="logout">Logout</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ===== MAIN ===== -->
+        <div class="main-content">
+            <!-- Top Bar -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="btn-icon" id="sidebarToggle" aria-label="Toggle sidebar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <line x1="3" y1="12" x2="21" y2="12" />
+                            <line x1="3" y1="18" x2="21" y2="18" />
+                        </svg>
+                    </button>
+                    <h3>Dashboard</h3>
+                </div>
+                <div class="topbar-right">
+                    <div class="topbar-search">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                        <input type="text" placeholder="Search anything...">
+                    </div>
+                    <button class="btn-icon notification-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                            <path d="M13.73 21a2 2 0 01-3.46 0" />
+                        </svg>
+                        <span class="dot"></span>
+                    </button>
+                    <div class="topbar-profile" style="position:relative;cursor:pointer;">
+                        <div class="avatar">JD</div>
+                        <div id="profileMenu" class="profile-menu">
+                            <a href="settings.html">Profile & Settings</a>
+                            <a href="index.html" class="logout">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Stat Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h4>Total Contacts</h4>
+                            <div class="value">12,847</div>
+                            <span class="change up">↑ 12.5%</span>
+                        </div>
+                        <div class="stat-icon green">👥</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h4>Messages Sent</h4>
+                            <div class="value">48,392</div>
+                            <span class="change up">↑ 8.2%</span>
+                        </div>
+                        <div class="stat-icon blue">✉️</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h4>Open Rate</h4>
+                            <div class="value">94.7%</div>
+                            <span class="change up">↑ 3.1%</span>
+                        </div>
+                        <div class="stat-icon orange">📬</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-info">
+                            <h4>Click Rate</h4>
+                            <div class="value">32.4%</div>
+                            <span class="change down">↓ 1.2%</span>
+                        </div>
+                        <div class="stat-icon purple">🖱️</div>
+                    </div>
+                </div>
+
+                <!-- Chart + Conversations -->
+                <div class="dashboard-grid">
+                    <div class="card chart-card">
+                        <div class="card-header">
+                            <h4>Campaign Performance</h4>
+                            <div style="display:flex;gap:8px;">
+                                <button class="btn btn-sm btn-primary">Weekly</button>
+                                <button class="btn btn-sm btn-outline" style="padding:6px 14px;">Monthly</button>
+                            </div>
+                        </div>
+                        <div class="chart-placeholder">
+                            <div class="chart-bar" style="height:45%" data-value="1.2K"></div>
+                            <div class="chart-bar" style="height:65%" data-value="1.8K"></div>
+                            <div class="chart-bar" style="height:40%" data-value="1.1K"></div>
+                            <div class="chart-bar" style="height:80%" data-value="2.4K"></div>
+                            <div class="chart-bar" style="height:55%" data-value="1.5K"></div>
+                            <div class="chart-bar" style="height:90%" data-value="2.8K"></div>
+                            <div class="chart-bar" style="height:70%" data-value="2.0K"></div>
+                        </div>
+                        <div
+                            style="display:flex;justify-content:space-around;padding:12px 20px 0;font-size:0.75rem;color:var(--text-muted);">
+                            <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+                        </div>
+                    </div>
+
+                    <div class="card conversations-card">
+                        <div class="card-header">
+                            <h4>Recent Conversations</h4>
+                            <a href="chat.html" class="btn btn-sm btn-outline" style="padding:6px 14px;">View All</a>
+                        </div>
+                        <div class="card-body" style="padding:0;">
+                            <div class="conversation-item">
+                                <div class="avatar" style="background:linear-gradient(135deg,#667eea,#764ba2);">AS</div>
+                                <div class="conv-info">
+                                    <h5>Ankit Sharma</h5>
+                                    <p>Can you share the offer details?</p>
+                                </div>
+                                <span class="conv-time">2m ago</span>
+                            </div>
+                            <div class="conversation-item">
+                                <div class="avatar" style="background:linear-gradient(135deg,#f093fb,#f5576c);">PG</div>
+                                <div class="conv-info">
+                                    <h5>Priya Gupta</h5>
+                                    <p>Thanks! I'll place my order now.</p>
+                                </div>
+                                <span class="conv-time">15m ago</span>
+                            </div>
+                            <div class="conversation-item">
+                                <div class="avatar" style="background:linear-gradient(135deg,#4facfe,#00f2fe);">RV</div>
+                                <div class="conv-info">
+                                    <h5>Rohit Verma</h5>
+                                    <p>When will my order be delivered?</p>
+                                </div>
+                                <span class="conv-time">1h ago</span>
+                            </div>
+                            <div class="conversation-item">
+                                <div class="avatar" style="background:linear-gradient(135deg,#43e97b,#38f9d7);">NK</div>
+                                <div class="conv-info">
+                                    <h5>Neha Kapoor</h5>
+                                    <p>Do you have this in blue color?</p>
+                                </div>
+                                <span class="conv-time">2h ago</span>
+                            </div>
+                            <div class="conversation-item">
+                                <div class="avatar" style="background:linear-gradient(135deg,#fa709a,#fee140);">MJ</div>
+                                <div class="conv-info">
+                                    <h5>Manish Jain</h5>
+                                    <p>Great service! Will recommend.</p>
+                                </div>
+                                <span class="conv-time">3h ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

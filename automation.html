@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation — Whatsappmate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>💬</text></svg>">
+</head>
+
+<body>
+    <div class="app-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <svg viewBox="0 0 36 36" fill="none" width="32" height="32">
+                    <circle cx="18" cy="18" r="18" fill="#25D366" />
+                    <path
+                        d="M25.5 18c0 4.14-3.36 7.5-7.5 7.5a7.44 7.44 0 01-3.6-.92L10.5 26l1.47-3.82A7.44 7.44 0 0110.5 18c0-4.14 3.36-7.5 7.5-7.5s7.5 3.36 7.5 7.5z"
+                        fill="#fff" />
+                </svg>
+                <div class="logo-text">Whatsapp<span>mate</span></div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <a href="dashboard.html" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7" />
+                            <rect x="14" y="3" width="7" height="7" />
+                            <rect x="3" y="14" width="7" height="7" />
+                            <rect x="14" y="14" width="7" height="7" />
+                        </svg> Dashboard</a>
+                    <a href="#" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                        </svg> Contacts</a>
+                    <a href="campaigns.html" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                        </svg> Broadcast</a>
+                    <a href="automation.html" class="nav-item active"><svg width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                        </svg> Automation</a>
+                    <a href="chat.html" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                        </svg> Live Chat <span class="nav-badge">5</span></a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Tools</div>
+                    <a href="#" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                        </svg> Templates</a>
+                    <a href="#" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="20" x2="18" y2="10" />
+                            <line x1="12" y1="20" x2="12" y2="4" />
+                            <line x1="6" y1="20" x2="6" y2="14" />
+                        </svg> Analytics</a>
+                    <a href="#" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3" />
+                        </svg> Settings</a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="sidebar-user">
+                    <div class="avatar">JD</div>
+                    <div class="user-info">
+                        <h5>John Doe</h5>
+                        <p>Admin</p>
+                    </div>
+                </div>
+                <div id="userMenu" class="user-menu">
+                    <a href="settings.html">Profile & Settings</a>
+                    <a href="index.html" class="logout">Logout</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN -->
+        <div class="main-content">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="btn-icon" id="sidebarToggle"><svg width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <line x1="3" y1="12" x2="21" y2="12" />
+                            <line x1="3" y1="18" x2="21" y2="18" />
+                        </svg></button>
+                    <h3>Flow Builder</h3>
+                </div>
+                <div class="topbar-right">
+                    <button class="btn btn-outline btn-sm">Test Flow</button>
+                    <button class="btn btn-primary btn-sm">Publish</button>
+                    <div class="topbar-profile" style="position:relative;cursor:pointer;">
+                        <div class="avatar">JD</div>
+                        <div id="profileMenu" class="profile-menu">
+                            <a href="settings.html">Profile & Settings</a>
+                            <a href="index.html" class="logout">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="automation-content">
+                <!-- Node Palette -->
+                <div class="node-palette">
+                    <h4>Components</h4>
+
+                    <div style="margin-bottom:20px;">
+                        <label
+                            style="font-size:0.75rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px;display:block;">Triggers</label>
+                        <div class="palette-item" draggable="true">
+                            <div class="palette-dot trigger"></div> New Message
+                        </div>
+                        <div class="palette-item" draggable="true">
+                            <div class="palette-dot trigger"></div> Workflow Start
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom:20px;">
+                        <label
+                            style="font-size:0.75rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px;display:block;">Logic</label>
+                        <div class="palette-item" draggable="true">
+                            <div class="palette-dot condition"></div> If / Else
+                        </div>
+                        <div class="palette-item" draggable="true">
+                            <div class="palette-dot condition"></div> Wait for Reply
+                        </div>
+                        <div class="palette-item" draggable="true">
+                            <div class="palette-dot condition"></div> Delay
+                        </div>
+                    </div>
+
+                    <div>
+                        <label
+                            style="font-size:0.75rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;margin-bottom:8px;display:block;">Actions</label>
+                        <div class="palette-item" draggable="true">
+                            <div class="palette-dot action"></div> Send Message
+                        </div>
+                        <div class="palette-item" draggable="true">
+                            <div class="palette-dot action"></div> Add Tag
+                        </div>
+                        <div class="palette-item" draggable="true">
+                            <div class="palette-dot action"></div> Assign Agent
+                        </div>
+                        <div class="palette-item" draggable="true">
+                            <div class="palette-dot action"></div> Update User
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Flow Canvas -->
+                <div class="flow-canvas">
+                    <div class="flow-container">
+
+                        <!-- Start Node -->
+                        <div class="flow-node trigger">
+                            <div class="flow-node-type">Trigger</div>
+                            <div class="flow-node-label">New Incoming Message</div>
+                            <div class="flow-node-desc">Any message containing "hi"</div>
+                        </div>
+
+                        <div class="flow-connector"></div>
+
+                        <!-- Welcome Message -->
+                        <div class="flow-node action">
+                            <div class="flow-node-type">Action</div>
+                            <div class="flow-node-label">Send Welcome Menu</div>
+                            <div class="flow-node-desc">List options: Sales, Support</div>
+                        </div>
+
+                        <div class="flow-connector"></div>
+
+                        <!-- Wait for Reply -->
+                        <div class="flow-node condition">
+                            <div class="flow-node-type">Wait</div>
+                            <div class="flow-node-label">Wait for User Reply</div>
+                            <div class="flow-node-desc">Timeout after 1 hour</div>
+                        </div>
+
+                        <div class="flow-connector"></div>
+
+                        <!-- Branch -->
+                        <div class="flow-branch">
+                            <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+                                <div class="flow-connector" style="height:20px;"></div>
+                                <div class="flow-node action">
+                                    <div class="flow-node-type">Action</div>
+                                    <div class="flow-node-label">Assign to Sales</div>
+                                    <div class="flow-node-desc">Tag: Interested</div>
+                                </div>
+                            </div>
+
+                            <div style="flex:1;display:flex;flex-direction:column;align-items:center;">
+                                <div class="flow-connector" style="height:20px;"></div>
+                                <div class="flow-node action">
+                                    <div class="flow-node-type">Action</div>
+                                    <div class="flow-node-label">Assign to Support</div>
+                                    <div class="flow-node-desc">Tag: Help Needed</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Properties Panel -->
+                <div class="properties-panel">
+                    <h4>Node Properties</h4>
+                    <div class="prop-group">
+                        <label>Selected Node</label>
+                        <input type="text" class="form-control" value="Send Welcome Menu">
+                    </div>
+
+                    <div class="prop-group">
+                        <label>Message Content</label>
+                        <textarea class="form-control"
+                            rows="4">Hi {{name}}! 👋 Welcome to Whatsappmate. How can we help you today? Please choose an option below.</textarea>
+                    </div>
+
+                    <div class="prop-group">
+                        <label>Buttons</label>
+                        <div style="display:flex;flex-direction:column;gap:8px;">
+                            <input type="text" class="form-control" value="Sales Inquiry">
+                            <input type="text" class="form-control" value="Customer Support">
+                            <button class="btn btn-outline btn-sm" style="width:100%;">+ Add Button</button>
+                        </div>
+                    </div>
+
+                    <div class="prop-group">
+                        <label>Settings</label>
+                        <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;">
+                            <input type="checkbox" checked> Save response to variable
+                        </div>
+                    </div>
+
+                    <div style="margin-top:auto;">
+                        <button class="btn btn-primary" style="width:100%;">Save Changes</button>
+                        <button class="btn btn-outline btn-sm"
+                            style="width:100%;margin-top:8px;color:var(--danger);border-color:var(--border);">Delete
+                            Node</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>

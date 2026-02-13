@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Builder — Whatsappmate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>💬</text></svg>">
+</head>
+
+<body>
+    <div class="app-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <svg viewBox="0 0 36 36" fill="none" width="32" height="32">
+                    <circle cx="18" cy="18" r="18" fill="#25D366" />
+                    <path
+                        d="M25.5 18c0 4.14-3.36 7.5-7.5 7.5a7.44 7.44 0 01-3.6-.92L10.5 26l1.47-3.82A7.44 7.44 0 0110.5 18c0-4.14 3.36-7.5 7.5-7.5s7.5 3.36 7.5 7.5z"
+                        fill="#fff" />
+                </svg>
+                <div class="logo-text">Whatsapp<span>mate</span></div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="nav-section">
+                    <div class="nav-section-title">Main</div>
+                    <a href="dashboard.html" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7" />
+                            <rect x="14" y="3" width="7" height="7" />
+                            <rect x="3" y="14" width="7" height="7" />
+                            <rect x="14" y="14" width="7" height="7" />
+                        </svg> Dashboard</a>
+                    <a href="#" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4-4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                        </svg> Contacts</a>
+                    <a href="campaigns.html" class="nav-item active"><svg width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                        </svg> Broadcast</a>
+                    <a href="automation.html" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                        </svg> Automation</a>
+                    <a href="chat.html" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
+                        </svg> Live Chat <span class="nav-badge">5</span></a>
+                </div>
+                <div class="nav-section">
+                    <div class="nav-section-title">Tools</div>
+                    <a href="#" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                            <polyline points="14 2 14 8 20 8" />
+                        </svg> Templates</a>
+                    <a href="#" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="20" x2="18" y2="10" />
+                            <line x1="12" y1="20" x2="12" y2="4" />
+                            <line x1="6" y1="20" x2="6" y2="14" />
+                        </svg> Analytics</a>
+                    <a href="#" class="nav-item"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="3" />
+                        </svg> Settings</a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="sidebar-user">
+                    <div class="avatar">JD</div>
+                    <div class="user-info">
+                        <h5>John Doe</h5>
+                        <p>Admin</p>
+                    </div>
+                </div>
+                <div id="userMenu" class="user-menu">
+                    <a href="settings.html">Profile & Settings</a>
+                    <a href="index.html" class="logout">Logout</a>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN -->
+        <div class="main-content">
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="btn-icon" id="sidebarToggle"><svg width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <line x1="3" y1="12" x2="21" y2="12" />
+                            <line x1="3" y1="18" x2="21" y2="18" />
+                        </svg></button>
+                    <h3>Campaign Builder</h3>
+                </div>
+                <div class="topbar-right">
+                    <button class="btn-icon notification-btn"><svg width="20" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9" />
+                            <path d="M13.73 21a2 2 0 01-3.46 0" />
+                        </svg><span class="dot"></span></button>
+                    <div class="topbar-profile" style="position:relative;cursor:pointer;">
+                        <div class="avatar">JD</div>
+                        <div id="profileMenu" class="profile-menu">
+                            <a href="settings.html">Profile & Settings</a>
+                            <a href="index.html" class="logout">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="campaign-content">
+                <!-- Step Wizard -->
+                <div class="step-wizard">
+                    <div class="step-item done" data-step="1">
+                        <div class="step-num">✓</div>
+                        <span class="step-label">Create</span>
+                    </div>
+                    <div class="step-connector active"></div>
+                    <div class="step-item active" data-step="2">
+                        <div class="step-num">2</div>
+                        <span class="step-label">Template</span>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step-item" data-step="3">
+                        <div class="step-num">3</div>
+                        <span class="step-label">Audience</span>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step-item" data-step="4">
+                        <div class="step-num">4</div>
+                        <span class="step-label">Schedule</span>
+                    </div>
+                </div>
+
+                <div class="campaign-grid">
+                    <!-- Left: Template Selection -->
+                    <div>
+                        <div class="card" style="margin-bottom:20px;">
+                            <div class="card-header">
+                                <h4>Campaign Details</h4>
+                                <span class="badge badge-primary">Draft</span>
+                            </div>
+                            <div class="card-body">
+                                <div style="margin-bottom:16px;">
+                                    <label
+                                        style="display:block;font-size:0.85rem;font-weight:600;margin-bottom:6px;color:var(--text-secondary);">Campaign
+                                        Name</label>
+                                    <input type="text" class="form-control" value="Summer Sale 2026 - WhatsApp Blast"
+                                        placeholder="Enter campaign name">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Select Template</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="template-grid">
+                                    <div class="template-card selected">
+                                        <h5>🎉 Promotional Offer</h5>
+                                        <p>Hi {{name}}! Get 40% off on all products this summer. Shop now and save big!
+                                        </p>
+                                        <span class="badge badge-success" style="margin-top:8px;">Approved</span>
+                                    </div>
+                                    <div class="template-card">
+                                        <h5>📦 Order Update</h5>
+                                        <p>Hi {{name}}, your order #{{order_id}} has been shipped! Track here: {{link}}
+                                        </p>
+                                        <span class="badge badge-success" style="margin-top:8px;">Approved</span>
+                                    </div>
+                                    <div class="template-card">
+                                        <h5>🔔 Reminder</h5>
+                                        <p>Hey {{name}}, you have items in your cart! Complete your purchase now and get
+                                            10% off.</p>
+                                        <span class="badge badge-warning" style="margin-top:8px;">Pending</span>
+                                    </div>
+                                    <div class="template-card">
+                                        <h5>⭐ Feedback Request</h5>
+                                        <p>Hi {{name}}! We'd love to hear your feedback. Rate your experience: {{link}}
+                                        </p>
+                                        <span class="badge badge-success" style="margin-top:8px;">Approved</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Audience & Schedule (below templates) -->
+                        <div class="card" style="margin-top:20px;">
+                            <div class="card-header">
+                                <h4>Audience</h4>
+                            </div>
+                            <div class="card-body">
+                                <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;">
+                                    <span class="badge badge-primary" style="padding:8px 16px;font-size:0.85rem;">All
+                                        Contacts (12,847)</span>
+                                    <span class="badge badge-info"
+                                        style="padding:8px 16px;font-size:0.85rem;cursor:pointer;">VIP Customers</span>
+                                    <span class="badge badge-info"
+                                        style="padding:8px 16px;font-size:0.85rem;cursor:pointer;">New Leads</span>
+                                    <span class="badge badge-info"
+                                        style="padding:8px 16px;font-size:0.85rem;cursor:pointer;">+ Import CSV</span>
+                                </div>
+                                <div style="display:flex;gap:12px;align-items:center;">
+                                    <label
+                                        style="font-size:0.85rem;font-weight:600;color:var(--text-secondary);">Schedule:</label>
+                                    <input type="datetime-local" class="form-control" style="max-width:260px;"
+                                        value="2026-02-14T10:00">
+                                    <select class="form-control" style="max-width:160px;">
+                                        <option>IST (UTC+5:30)</option>
+                                        <option>EST (UTC-5)</option>
+                                        <option>PST (UTC-8)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="display:flex;gap:12px;margin-top:20px;">
+                            <button class="btn btn-primary btn-lg">📤 Send Now</button>
+                            <button class="btn btn-outline btn-lg">🕐 Schedule Campaign</button>
+                        </div>
+                    </div>
+
+                    <!-- Right: Phone Preview -->
+                    <div>
+                        <div style="position:sticky;top:90px;">
+                            <h4 style="text-align:center;margin-bottom:16px;color:var(--text-muted);font-size:0.9rem;">
+                                Preview</h4>
+                            <div class="phone-preview">
+                                <div class="phone-screen">
+                                    <div class="phone-statusbar">9:41 AM</div>
+                                    <div class="phone-chat-header">
+                                        <div class="avatar-sm"
+                                            style="background:rgba(255,255,255,0.2);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.7rem;color:white;">
+                                            WM</div>
+                                        <div>
+                                            <div style="font-size:0.85rem;font-weight:600;">Whatsappmate Store</div>
+                                            <div style="font-size:0.7rem;opacity:0.8;">Business Account</div>
+                                        </div>
+                                    </div>
+                                    <div class="phone-chat-body">
+                                        <div class="phone-msg green">
+                                            <div>Hi Ankit! 🎉</div>
+                                            <div style="margin-top:6px;">Get <strong>40% off</strong> on all products
+                                                this summer. Shop now and save big!</div>
+                                            <div
+                                                style="margin-top:8px;padding:8px 12px;background:rgba(37,211,102,0.2);border-radius:6px;text-align:center;font-weight:600;color:#075E54;">
+                                                🛍️ Shop Now</div>
+                                            <div style="font-size:0.65rem;color:#999;text-align:right;margin-top:4px;">
+                                                10:00 AM ✓✓</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
